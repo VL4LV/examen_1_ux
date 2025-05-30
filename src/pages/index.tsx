@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Home: React.FC = () => {
   return (
     <div style={{ backgroundColor: 'black', minHeight: '100vh' }}>
-      <Navbar /> {/* Aquí se muestra la navegacion */}
+      <Navbar /> 
       <Banner />
       <FeaturedCarousel />
     </div>

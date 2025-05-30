@@ -2,7 +2,7 @@ import React from 'react';
 import Thumbnail from '../atoms/Thumbnail';
 
 interface CarouselRowProps {
-  items: { image: string; title: string }[];
+  items: { image: string; title: string; description?: string }[]; 
 }
 
 const CarouselRow: React.FC<CarouselRowProps> = ({ items }) => {
@@ -15,7 +15,12 @@ const CarouselRow: React.FC<CarouselRowProps> = ({ items }) => {
   return (
     <div style={containerStyle}>
       {items.map((item, index) => (
-        <Thumbnail key={index} image={item.image} title={item.title} />
+        <Thumbnail
+          key={index}
+          image={item.image}
+          title={item.title}
+          description={item.description} 
+        />
       ))}
     </div>
   );
