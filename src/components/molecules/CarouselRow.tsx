@@ -1,4 +1,3 @@
-// src/components/molecules/CarouselRow.tsx
 import React from 'react';
 import Thumbnail from '../atoms/Thumbnail';
 

@@ -1,4 +1,3 @@
-// src/components/atoms/Thumbnail.tsx
 import React from 'react';
 
 interface ThumbnailProps {

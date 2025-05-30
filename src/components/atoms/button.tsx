@@ -6,19 +6,20 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({ text, onClick }) => {
-  const defaultBackgroundColor = '#e50914';
-  const hoverBackgroundColor = '#f40612';
+  const defaultBackgroundColor = 'rgba(255, 255, 255, 0.2)';
+  const hoverBackgroundColor = 'rgba(255, 255, 255, 0.35)';
 
   const buttonStyle: React.CSSProperties = {
     padding: '0.8rem 2rem',
     backgroundColor: defaultBackgroundColor,
     border: 'none',
-    borderRadius: '5px',
+    borderRadius: '25px',
     color: 'white',
-    fontWeight: 'bold',
+    fontWeight: '500',
     fontSize: '1rem',
     cursor: 'pointer',
-    transition: 'background 0.3s ease',
+    transition: 'background-color 0.3s ease',
+    backdropFilter: 'blur(5px)',
   };
 
   return (
@@ -26,10 +27,10 @@ const Button: React.FC<ButtonProps> = ({ text, onClick }) => {
       style={buttonStyle}
       onClick={onClick}
       onMouseOver={(e) => {
-        (e.target as HTMLButtonElement).style.backgroundColor = hoverBackgroundColor;
+        (e.currentTarget as HTMLButtonElement).style.backgroundColor = hoverBackgroundColor;
       }}
       onMouseOut={(e) => {
-        (e.target as HTMLButtonElement).style.backgroundColor = defaultBackgroundColor;
+        (e.currentTarget as HTMLButtonElement).style.backgroundColor = defaultBackgroundColor;
       }}
     >
       {text}

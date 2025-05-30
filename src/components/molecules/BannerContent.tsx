@@ -21,7 +21,7 @@ const BannerContent: React.FC<BannerContentProps> = ({ title }) => {
   return (
     <div style={contentStyle}>
       <h1 style={titleStyle}>{title}</h1>
-      <Button text="Reproducir" onClick={() => alert('Reproduciendo...')} />
+      <Button text="Ir a la serie" onClick={() => alert('Ir a la serie...')} />
     </div>
   );
 };

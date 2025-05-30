@@ -4,28 +4,28 @@ import BannerContent from '../molecules/BannerContent';
 
 const bannerItems = [
     {
-        image: 'https://picsum.photos/id/1011/1350/600',
-        title: 'El Crimen Perfecto',
+        image: '/imagenes/just like.jpg',
+        title: 'And just like that..',
     },
     {
-        image: 'https://picsum.photos/id/1012/1350/600',
-        title: 'Misterio en la Montaña',
+        image: '/imagenes/duster.jpg',
+        title: 'Duster',
     },
     {
-        image: 'https://picsum.photos/id/1013/1350/600',
-        title: 'Sombras del Pasado',
+        image: '/imagenes/rick and morty.jpg',
+        title: 'Riack and Morty',
     },
     {
-        image: 'https://picsum.photos/id/1014/1350/600',
-        title: 'Código Mortal',
+        image: '/imagenes/the last.png',
+        title: 'The Last of us',
     },
     {
-        image: 'https://picsum.photos/id/1015/1350/600',
-        title: 'El Último Susurro',
+        image: '/imagenes/mick.jpg',
+        title: 'Mickey 17',
     },
     {
-        image: 'https://picsum.photos/id/1016/1350/600',
-        title: 'Evidencia Oculta',
+        image: '/imagenes/white.jpg',
+        title: 'The White Lotus',
     },
 ];
 
@@ -52,7 +52,7 @@ const Banner: React.FC = () => {
                             className="d-block w-100"
                             src={item.image}
                             alt={`Slide ${index}`}
-                            style={{ height: '60vh', objectFit: 'cover' }}
+                            style={{ height: '90vh', objectFit: 'cover' }}
                         />
                         <div
                             style={{
