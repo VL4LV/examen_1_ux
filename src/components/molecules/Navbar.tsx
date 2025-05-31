@@ -1,34 +1,32 @@
-import Link from 'next/link';
 import React from 'react';
+import { Navbar, Nav } from 'react-bootstrap';
 
-const NavBar: React.FC = () => {
+const CustomNavbar: React.FC = () => {
   return (
-    <nav style={{ 
-        backgroundColor: 'transparent !important', 
-        boxShadow: 'none', 
-        padding: '10px 20px',
-        display: 'flex',
-        justifyContent: 'flex-end',
-        gap: '20px',
-        alignItems: 'center',
-    }}>
-      <Link href="/" legacyBehavior>
-        <a style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold' }}>Inicio</a>
-      </Link>
-      <Link href="/series" legacyBehavior>
-        <a style={{ color: 'white', textDecoration: 'none' }}>Series</a>
-      </Link>
-      <Link href="/peliculas" legacyBehavior>
-        <a style={{ color: 'white', textDecoration: 'none' }}>Películas</a>
-      </Link>
-      <Link href="/hbo" legacyBehavior>
-        <a style={{ color: 'white', textDecoration: 'none' }}>HBO</a>
-      </Link>
-      <Link href="/ninos-familia" legacyBehavior>
-        <a style={{ color: 'white', textDecoration: 'none' }}>Niños y Familia</a>
-      </Link>
-    </nav>
+    <Navbar
+      expand="lg"
+      bg="transparent"
+      variant="dark"
+      className="w-100 px-4"
+      style={{
+        position: 'absolute', // o 'fixed' si quieres que se quede al hacer scroll
+        top: 0,
+        left: 0,
+        zIndex: 1000,
+      }}
+    >
+      <Navbar.Brand href="#">
+        <img src="/imagenes/max_logo_nav.png" alt="Logo" style={{ height: '40px' }} />
+      </Navbar.Brand>
+      <Nav className="ms-auto gap-4">
+        <Nav.Link href="#">Inicio</Nav.Link>
+        <Nav.Link href="#">Series</Nav.Link>
+        <Nav.Link href="#">Películas</Nav.Link>
+        <Nav.Link href="#">HBO</Nav.Link>
+        <Nav.Link href="#">Niños y Familia</Nav.Link>
+      </Nav>
+    </Navbar>
   );
 };
 
-export default NavBar;
+export default CustomNavbar;

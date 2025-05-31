@@ -32,18 +32,6 @@ const bannerItems = [
 const Banner: React.FC = () => {
     return (
         <div style={{ position: 'relative' }}>
-            {/* Logo de Max */}
-            <img
-                src="/imagenes/max_logo_nav.png"
-                alt="Max Logo"
-                style={{
-                    height: '40px',
-                    position: 'absolute',
-                    top: '20px',
-                    left: '30px',
-                    zIndex: 10,
-                }}
-            />
 
             <Carousel fade controls indicators interval={5000}>
                 {bannerItems.map((item, index) => (
