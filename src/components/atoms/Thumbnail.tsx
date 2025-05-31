@@ -3,36 +3,27 @@ import React from 'react';
 interface ThumbnailProps {
   image: string;
   title: string;
+  description?: string; 
 }
 
-const Thumbnail: React.FC<ThumbnailProps> = ({ image, title }) => {
-  const style: React.CSSProperties = {
-    width: '180px',
-    height: '100px',
-    marginRight: '10px',
-    borderRadius: '5px',
-    backgroundImage: `url(${image})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    transition: 'transform 0.3s',
-    cursor: 'pointer',
+const Thumbnail: React.FC<ThumbnailProps> = ({ image, title, description }) => {
+  const containerStyle: React.CSSProperties = {
+    textAlign: 'center',
+    margin: '10px',
   };
 
-  const hoverStyle: React.CSSProperties = {
-    transform: 'scale(1.05)',
+  const imageStyle: React.CSSProperties = {
+    width: '100px',
+    height: '100px',
+    objectFit: 'cover',
   };
 
   return (
-    <div
-      style={style}
-      onMouseOver={(e) => {
-        (e.currentTarget as HTMLDivElement).style.transform = hoverStyle.transform!;
-      }}
-      onMouseOut={(e) => {
-        (e.currentTarget as HTMLDivElement).style.transform = 'scale(1)';
-      }}
-      title={title}
-    />
+    <div style={containerStyle}>
+      <img src={image} alt={title} style={imageStyle} />
+      <h4>{title}</h4>
+      {description && <p>{description}</p>} 
+    </div>
   );
 };
 
