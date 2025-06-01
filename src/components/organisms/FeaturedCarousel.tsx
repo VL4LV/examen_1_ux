@@ -37,15 +37,26 @@ const FeaturedCarousel: React.FC = () => {
       image: 'https://picsum.photos/id/1016/400/200',
       title: 'El misterio 6',
     },
+    {
+      image: 'https://picsum.photos/id/1017/400/200',
+      title: 'El misterio 7',
+    },
+    {
+      image: 'https://picsum.photos/id/1018/400/200',
+      title: 'El misterio 8',
+    },
+    {
+      image: 'https://picsum.photos/id/1019/400/200',
+      title: 'El misterio 9',
+    },
   ];
 
   return (
     <section style={sectionStyle}>
-      <h2 style={titleStyle}>Contenido destacado</h2>
+      <h2 style={titleStyle}>Destacados</h2>
       <CarouselRow items={sampleItems} />
     </section>
   );
 };
 
 export default FeaturedCarousel;
-
