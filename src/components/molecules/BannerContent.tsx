@@ -41,7 +41,7 @@ const BannerContent: React.FC<BannerContentProps> = ({ title, description, age, 
     <div style={contentStyle}>
       <h1 style={titleStyle}>{title}</h1>
 
-      {/* Info adicional */}
+      
       <div style={infoContainerStyle}>
         {age && <span>{age}</span>}
         {category && <span>{category}</span>}

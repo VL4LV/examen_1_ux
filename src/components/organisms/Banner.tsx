@@ -55,8 +55,7 @@ const bannerItems = [
 
 const Banner: React.FC = () => {
     return (
-        <div style={{ position: 'relative' }}>
-
+        <div style={{ position: 'relative', overflowX: 'hidden' }}> 
             <Carousel fade controls indicators interval={5000}>
                 {bannerItems.map((item, index) => (
                     <Carousel.Item key={index}>

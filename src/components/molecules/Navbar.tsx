@@ -15,7 +15,7 @@ const CustomNavbar: React.FC = () => {
         right: 0,
         zIndex: 1000,
         padding: '0 2rem',
-        height: '60px', // altura fija para centrar verticalmente
+        height: '60px', 
       }}
     >
       <Container fluid className="d-flex align-items-center justify-content-between">

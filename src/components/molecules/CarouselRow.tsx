@@ -1,5 +1,5 @@
 import React from 'react';
-import { MoreVertical } from 'lucide-react'; // o usa un icono de 3 puntos
+import { MoreVertical } from 'lucide-react'; 
 
 interface CarouselItem {
   image: string;
@@ -13,14 +13,15 @@ interface CarouselRowProps {
 const CarouselRow: React.FC<CarouselRowProps> = ({ items }) => {
   const containerStyle: React.CSSProperties = {
     display: 'flex',
-    overflowX: 'auto',
+    overflowX: 'auto', 
     gap: '16px',
     paddingBottom: '10px',
+    scrollbarWidth: 'none', 
   };
 
   const itemStyle: React.CSSProperties = {
     position: 'relative',
-    minWidth: '220px',
+    minWidth: '220px', 
     borderRadius: '8px',
     overflow: 'hidden',
     backgroundColor: '#1c1c1c',
