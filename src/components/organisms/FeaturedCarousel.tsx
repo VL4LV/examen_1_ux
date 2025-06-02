@@ -16,8 +16,7 @@ const FeaturedCarousel: React.FC = () => {
   };
 
   const top10TitleStyle: React.CSSProperties = {
-    textAlign: 'left' ,
-    fontsize: '1.5rem',
+    textAlign: 'left',
     fontWeight: 'bold',
   };
 
@@ -25,6 +24,7 @@ const FeaturedCarousel: React.FC = () => {
     {
       image: '/imagenes/deepfear.jpg',
       title: 'Miedo Profundo',
+      isNew: true,
     },
     {
       image: '/imagenes/fnaf.jpg',
@@ -53,6 +53,7 @@ const FeaturedCarousel: React.FC = () => {
     {
       image: '/imagenes/regShow.jpg',
       title: 'Regular Show',
+      isNew: true,
     },
     {
       image: '/imagenes/venom.jpg',
@@ -66,25 +67,33 @@ const FeaturedCarousel: React.FC = () => {
       title: 'Rick and Morty',
       age: '18+',
       categoria: 'Comedy/Sci-Fi',
+      progress: 15,
+      description: 'Una serie animada sobre aventuras cómicas y científicas de Rick y su nieto Morty.',
     },
     {
       image: '/imagenes/Dandadan.jpg',
       title: 'Dandadan',
       age: '13+',
       categoria: 'Anime/Action',
+      isNew: true,
+      progress: 75,
+      description: 'Un anime lleno de acción y elementos sobrenaturales, con personajes entrañables y peleas épicas.',
     },
     {
       image: '/imagenes/Barbie.jpg',
       title: 'Barbie',
       age: '10+',
       categoria: 'Comedy/Fantasy',
-    }, 
+      progress: 55,
+      description: 'Película de fantasía y comedia para toda la familia con la icónica muñeca Barbie.',
+    },
   ];
 
   const top10Items = [
     {
       image: '/imagenes/TLOU2.webp',
       title: 'Top 1',
+      isNew: true,
     },
     {
       image: '/imagenes/Andjlt.webp',
@@ -127,7 +136,7 @@ const FeaturedCarousel: React.FC = () => {
   const soloParaTiItems = [
     { image: '/imagenes/Dorohedoro.jpg', title: 'DoroheDoro' },
     { image: '/imagenes/Frieren.jpg', title: 'Frieren' },
-    { image: '/imagenes/Noragami.jpg', title: 'Noragami' },
+    { image: '/imagenes/Noragami.jpg', title: 'Noragami', isNew: true },
     { image: '/imagenes/Dandadan.jpg', title: 'Dandadan' },
     { image: '/imagenes/BloodLad.jpg', title: 'Blood Lad' },
     { image: '/imagenes/onePiece.jpg', title: 'One Piece' },
@@ -136,24 +145,24 @@ const FeaturedCarousel: React.FC = () => {
     { image: '/imagenes/Getbackers.jpg', title: 'Get Backers' },
     { image: '/imagenes/farawayPala.jpg', title: 'The Faraway Paladin' },
     { image: '/imagenes/Hsing.jpg', title: 'Hellsing' },
-    { image: '/imagenes/Inuyashiki.jpg', title: 'Inuyashiki' },
+    { image: '/imagenes/Inuyashiki.jpg', title: 'Inuyashiki', isNew: true },
     { image: '/imagenes/MahoYome.jpg', title: 'Mahoutsukai no yome' },
     { image: '/imagenes/SL.png', title: 'Solo Leveling' },
     { image: '/imagenes/BNA.jpg', title: 'BNA' },
     { image: '/imagenes/Toradora.jpg', title: 'Toradora' },
   ];
-  
+
 
   const comediaItems = [
     { image: '/imagenes/GemStones.jpg', title: 'The Righteous Gemstones' },
     { image: '/imagenes/VEEP.jpg', title: 'VEEP' },
     { image: '/imagenes/RnM.jpg', title: 'Rick and Morty' },
     { image: '/imagenes/CurbYE.jpg', title: 'Curb Your Enthusiasm' },
-    { image: '/imagenes/Barbie.jpg', title: 'Barbie' },
+    { image: '/imagenes/Barbie.jpg', title: 'Barbie', isNew: true },
     { image: '/imagenes/eastbound.jpg', title: 'Eastbound & Down' },
     { image: '/imagenes/flightcon.jpg', title: 'Flight of the Conchords' },
     { image: '/imagenes/hacks3.jpg', title: 'Hacks' },
-    { image: '/imagenes/boreddeath.jpg', title: 'Bored to Death' },
+    { image: '/imagenes/boreddeath.jpg', title: 'Bored to Death', isNew: true },
     { image: '/imagenes/EEAAO.jpg', title: 'Everything Everywhere all at Once' },
   ];
 
@@ -166,7 +175,7 @@ const FeaturedCarousel: React.FC = () => {
       <CarouselRow items={continueWatchingItems} />
 
       <h2 style={{ ...titleStyle, marginTop: '30px' }}>Top 10 Hoy</h2>
-      <CarouselRow items={top10Items} titleStyle={top10TitleStyle}/>
+      <CarouselRow items={top10Items} />
 
       <h2 style={{ ...titleStyle, marginTop: '30px' }}>Solo para ti</h2>
       <CarouselRow items={soloParaTiItems} />

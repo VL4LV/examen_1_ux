@@ -1,15 +1,22 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
-import { BsChevronLeft, BsChevronRight, BsThreeDotsVertical } from 'react-icons/bs';
+import { BsChevronLeft, BsChevronRight, BsThreeDotsVertical, BsPlayFill } from 'react-icons/bs';
 
 interface CarouselRowProps {
-  items: { image: string; title: string }[];
-  className?: string; 
+  items: {
+    image: string;
+    title: string;
+    isNew?: boolean;
+    progress?: number;
+    description?: string;
+  }[];
+  className?: string;
 }
 
 const BootstrapCarouselRow: React.FC<CarouselRowProps> = ({ items, className }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
@@ -22,7 +29,11 @@ const BootstrapCarouselRow: React.FC<CarouselRowProps> = ({ items, className }) 
   };
 
   return (
-    <div className={`position-relative py-3 ${className || ''}`}>
+    <div
+      className={`position-relative py-3 text-white ${className || ''}`}
+      style={{ backgroundColor: '#000000' }}
+    >
+      {/* Botón izquierda */}
       <Button
         variant="dark"
         className="position-absolute top-50 start-0 translate-middle-y z-3"
@@ -32,7 +43,7 @@ const BootstrapCarouselRow: React.FC<CarouselRowProps> = ({ items, className }) 
         <BsChevronLeft />
       </Button>
 
-      
+      {/* Contenedor de tarjetas */}
       <div
         ref={scrollRef}
         className="d-flex overflow-auto px-4"
@@ -41,29 +52,91 @@ const BootstrapCarouselRow: React.FC<CarouselRowProps> = ({ items, className }) 
         {items.map((item, index) => (
           <div
             key={index}
-            className={`card bg-dark text-white position-relative ${className || ''}`} 
-            style={{ minWidth: '200px', flex: '0 0 auto' }}
+            className={`card bg-dark text-white position-relative ${className || ''}`}
+            style={{ minWidth: '200px', flex: '0 0 auto', borderRadius: '8px', overflow: 'hidden' }}
           >
-            
-            <img src={item.image} className="card-img" alt={item.title} style={{ width: '100%', borderRadius: '8px' }} />
+            {/* Etiqueta "Nuevo" */}
+            {item.isNew && (
+              <div
+                className="position-absolute top-0 start-0 bg-white text-dark px-2 py-1"
+                style={{
+                  fontSize: '0.85rem',
+                  fontWeight: 'bold',
+                  borderBottomRightRadius: '8px',
+                  border: '1px solid rgba(0,0,0,0.1)',
+                  zIndex: 2,
+                }}
+              >
+                Nuevo
+              </div>
+            )}
 
-            
+            {/* Imagen */}
+            <img
+              src={item.image}
+              className="card-img"
+              alt={item.title}
+              style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+            />
+
+            {/* Overlay con botón, título y barra de progreso */}
             <div
               className="card-img-overlay d-flex flex-column justify-content-end p-2"
               style={{
                 background: 'linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0))',
-                textAlign: 'center', marginTop: '8px', color: 'white'
+                color: 'white',
               }}
             >
-              <h6 className="card-title mb-0">{item.title}</h6>
+              <h6 className="card-title mb-1 text-white" style={{ fontSize: '1rem' }}>
+                {item.title}
+              </h6>
+
+              {typeof item.progress === 'number' && (
+                <div className="d-flex flex-column align-items-start gap-1 mt-1">
+                  {/* Botón ▶ */}
+                  <BsPlayFill
+                    style={{
+                      color: 'white',
+                      fontSize: '1.5rem',
+                      cursor: 'pointer',
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#cccccc')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = 'white')}
+                    onClick={() => setActiveIndex(activeIndex === index ? null : index)}
+                  />
+
+                  {/* Barra de progreso */}
+                  <div
+                    className="w-100 rounded"
+                    style={{ height: '6px', backgroundColor: 'rgba(255,255,255,0.3)' }}
+                  >
+                    <div
+                      style={{
+                        width: `${item.progress}%`,
+                        height: '100%',
+                        backgroundColor: 'white',
+                        borderRadius: '4px',
+                        transition: 'width 0.3s',
+                      }}
+                    />
+                  </div>
+
+                  {/* Descripción visible solo si es el activo */}
+                  {activeIndex === index && item.description && (
+                    <div className="mt-2 p-2 bg-dark rounded" style={{ fontSize: '0.85rem', opacity: 0.9 }}>
+                      {item.description}
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
 
-            
+            {/* Botón de opciones */}
             <Button
-              variant="dark"
+              variant="light"
               size="sm"
               className="position-absolute top-0 end-0 m-1 p-1"
-              style={{ borderRadius: '50%', opacity: 0.8 }}
+              style={{ borderRadius: '50%', opacity: 0.8, zIndex: 2 }}
             >
               <BsThreeDotsVertical />
             </Button>
@@ -71,7 +144,7 @@ const BootstrapCarouselRow: React.FC<CarouselRowProps> = ({ items, className }) 
         ))}
       </div>
 
-      
+      {/* Botón derecha */}
       <Button
         variant="dark"
         className="position-absolute top-50 end-0 translate-middle-y z-3"
