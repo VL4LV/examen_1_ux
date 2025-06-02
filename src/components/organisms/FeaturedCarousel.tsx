@@ -1,6 +1,8 @@
 import React from 'react';
 import CarouselRow from '../molecules/CarouselRow';
 
+
+
 const FeaturedCarousel: React.FC = () => {
   const sectionStyle: React.CSSProperties = {
     padding: '20px',
@@ -11,6 +13,12 @@ const FeaturedCarousel: React.FC = () => {
   const titleStyle: React.CSSProperties = {
     fontSize: '1.5rem',
     marginBottom: '10px',
+  };
+
+  const top10TitleStyle: React.CSSProperties = {
+    textAlign: 'left' ,
+    fontsize: '1.5rem',
+    fontWeight: 'bold',
   };
 
   const sampleItems = [
@@ -69,64 +77,64 @@ const FeaturedCarousel: React.FC = () => {
 
   const top10Items = [
     {
-      image: 'https://picsum.photos/id/1023/400/200',
+      image: '/imagenes/TLOU2.webp',
       title: 'Top 1',
     },
     {
-      image: 'https://picsum.photos/id/1024/400/200',
+      image: '/imagenes/Andjlt.webp',
       title: 'Top 2',
     },
     {
-      image: 'https://picsum.photos/id/1025/400/200',
+      image: '/imagenes/hobbit.webp',
       title: 'Top 3',
     },
     {
-      image: 'https://picsum.photos/id/1026/400/200',
+      image: '/imagenes/duster2.webp',
       title: 'Top 4',
     },
     {
-      image: 'https://picsum.photos/id/1027/400/200',
+      image: '/imagenes/peewee.webp',
       title: 'Top 5',
     },
     {
-      image: 'https://picsum.photos/id/1028/400/200',
+      image: '/imagenes/mk17.webp',
       title: 'Top 6',
     },
     {
-      image: 'https://picsum.photos/id/1029/400/200',
+      image: '/imagenes/sherriPap.webp',
       title: 'Top 7',
     },
     {
-      image: 'https://picsum.photos/id/1030/400/200',
+      image: '/imagenes/hacks.webp',
       title: 'Top 8',
     },
     {
-      image: 'https://picsum.photos/id/1031/400/200',
+      image: '/imagenes/daPitt.webp',
       title: 'Top 9',
     },
     {
-      image: 'https://picsum.photos/id/1032/400/200',
+      image: '/imagenes/daWLot.webp',
       title: 'Top 10',
     },
   ];
 
   const soloParaTiItems = [
-    { image: 'https://picsum.photos/id/1033/400/200', title: 'DoroheDoro' },
-    { image: 'https://picsum.photos/id/1034/400/200', title: 'Frieren' },
-    { image: 'https://picsum.photos/id/1035/400/200', title: 'Noragami' },
-    { image: 'https://picsum.photos/id/1036/400/200', title: 'Dandadan' },
-    { image: 'https://picsum.photos/id/1037/400/200', title: 'Blood Laf' },
-    { image: 'https://picsum.photos/id/1038/400/200', title: 'One Piece' },
-    { image: 'https://picsum.photos/id/1039/400/200', title: 'Hells Paradise' },
-    { image: 'https://picsum.photos/id/1040/400/200', title: 'Overlord' },
-    { image: 'https://picsum.photos/id/1041/400/200', title: 'Get Backers' },
-    { image: 'https://picsum.photos/id/1042/400/200', title: 'The Far-Away Paladin' },
-    { image: 'https://picsum.photos/id/1043/400/200', title: 'Hellsing' },
-    { image: 'https://picsum.photos/id/1044/400/200', title: 'Inuyashiki' },
-    { image: 'https://picsum.photos/id/1045/400/200', title: 'Mahoutsukai no yome' },
-    { image: 'https://picsum.photos/id/1046/400/200', title: 'Solo Leveling' },
-    { image: 'https://picsum.photos/id/1047/400/200', title: 'BNA' },
-    { image: 'https://picsum.photos/id/1048/400/200', title: 'Toradora' },
+    { image: '/imagenes/Dorohedoro.jpg', title: 'DoroheDoro' },
+    { image: '/imagenes/Frieren.jpg', title: 'Frieren' },
+    { image: '/imagenes/Noragami.jpg', title: 'Noragami' },
+    { image: '/imagenes/Dandadan.jpg', title: 'Dandadan' },
+    { image: '/imagenes/BloodLad.jpg', title: 'Blood Lad' },
+    { image: '/imagenes/onePiece.jpg', title: 'One Piece' },
+    { image: '/imagenes/HP.png', title: 'Hells Paradise' },
+    { image: '/imagenes/overlord.jpg', title: 'Overlord' },
+    { image: '/imagenes/Getbackers.jpg', title: 'Get Backers' },
+    { image: '/imagenes/farawayPala.jpg', title: 'The Faraway Paladin' },
+    { image: '/imagenes/Hsing.jpg', title: 'Hellsing' },
+    { image: '/imagenes/Inuyashiki.jpg', title: 'Inuyashiki' },
+    { image: '/imagenes/MahoYome.jpg', title: 'Mahoutsukai no yome' },
+    { image: '/imagenes/SL.png', title: 'Solo Leveling' },
+    { image: '/imagenes/BNA.jpg', title: 'BNA' },
+    { image: '/imagenes/Toradora.jpg', title: 'Toradora' },
   ];
 
   const comediaItems = [
@@ -151,7 +159,7 @@ const FeaturedCarousel: React.FC = () => {
       <CarouselRow items={continueWatchingItems} />
 
       <h2 style={{ ...titleStyle, marginTop: '30px' }}>Top 10</h2>
-      <CarouselRow items={top10Items} />
+      <CarouselRow items={top10Items} titleStyle={top10TitleStyle}/>
 
       <h2 style={{ ...titleStyle, marginTop: '30px' }}>Solo para ti</h2>
       <CarouselRow items={soloParaTiItems} />

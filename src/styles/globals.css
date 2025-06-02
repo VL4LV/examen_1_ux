@@ -40,3 +40,12 @@ a {
     color-scheme: dark;
   }
 }
+
+.carousel-item {
+  position: relative;
+  min-width: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #1c1c1c;
+}
+

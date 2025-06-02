@@ -5,9 +5,10 @@ import { BsChevronLeft, BsChevronRight, BsThreeDotsVertical } from 'react-icons/
 
 interface CarouselRowProps {
   items: { image: string; title: string }[];
+  className?: string; 
 }
 
-const BootstrapCarouselRow: React.FC<CarouselRowProps> = ({ items }) => {
+const BootstrapCarouselRow: React.FC<CarouselRowProps> = ({ items, className }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: 'left' | 'right') => {
@@ -21,8 +22,7 @@ const BootstrapCarouselRow: React.FC<CarouselRowProps> = ({ items }) => {
   };
 
   return (
-    <div className="position-relative py-3">
-      {/* Flecha izquierda */}
+    <div className={`position-relative py-3 ${className || ''}`}>
       <Button
         variant="dark"
         className="position-absolute top-50 start-0 translate-middle-y z-3"
@@ -32,7 +32,7 @@ const BootstrapCarouselRow: React.FC<CarouselRowProps> = ({ items }) => {
         <BsChevronLeft />
       </Button>
 
-      {/* Carrusel de tarjetas */}
+      
       <div
         ref={scrollRef}
         className="d-flex overflow-auto px-4"
@@ -41,23 +41,24 @@ const BootstrapCarouselRow: React.FC<CarouselRowProps> = ({ items }) => {
         {items.map((item, index) => (
           <div
             key={index}
-            className="card bg-dark text-white position-relative"
+            className={`card bg-dark text-white position-relative ${className || ''}`} 
             style={{ minWidth: '200px', flex: '0 0 auto' }}
           >
-            {/* Imagen */}
-            <img src={item.image} className="card-img" alt={item.title} />
+            
+            <img src={item.image} className="card-img" alt={item.title} style={{ width: '100%', borderRadius: '8px' }} />
 
-            {/* Titulo y fondo degradado */}
+            
             <div
               className="card-img-overlay d-flex flex-column justify-content-end p-2"
               style={{
                 background: 'linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0))',
+                textAlign: 'center', marginTop: '8px', color: 'white'
               }}
             >
               <h6 className="card-title mb-0">{item.title}</h6>
             </div>
 
-            {/* Boton de tres puntos verticales */}
+            
             <Button
               variant="dark"
               size="sm"
@@ -70,7 +71,7 @@ const BootstrapCarouselRow: React.FC<CarouselRowProps> = ({ items }) => {
         ))}
       </div>
 
-      {/* Flecha derecha */}
+      
       <Button
         variant="dark"
         className="position-absolute top-50 end-0 translate-middle-y z-3"
