@@ -1,8 +1,6 @@
 import React from 'react';
 import CarouselRow from '../molecules/CarouselRow';
 
-
-
 const FeaturedCarousel: React.FC = () => {
   const sectionStyle: React.CSSProperties = {
     padding: '20px',

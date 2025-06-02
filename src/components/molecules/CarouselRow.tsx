@@ -33,7 +33,7 @@ const BootstrapCarouselRow: React.FC<CarouselRowProps> = ({ items, className }) 
       className={`position-relative py-3 text-white ${className || ''}`}
       style={{ backgroundColor: '#000000' }}
     >
-      {/* Botón izquierda */}
+      {/* boton izquierda */}
       <Button
         variant="dark"
         className="position-absolute top-50 start-0 translate-middle-y z-3"
@@ -79,7 +79,7 @@ const BootstrapCarouselRow: React.FC<CarouselRowProps> = ({ items, className }) 
               style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
             />
 
-            {/* Overlay con botón, título y barra de progreso */}
+            {/* Overlay con boton, titulo y barra de progreso */}
             <div
               className="card-img-overlay d-flex flex-column justify-content-end p-2"
               style={{
@@ -93,7 +93,7 @@ const BootstrapCarouselRow: React.FC<CarouselRowProps> = ({ items, className }) 
 
               {typeof item.progress === 'number' && (
                 <div className="d-flex flex-column align-items-start gap-1 mt-1">
-                  {/* Botón ▶ */}
+                  {/* boton ▶ */}
                   <BsPlayFill
                     style={{
                       color: 'white',
@@ -131,7 +131,7 @@ const BootstrapCarouselRow: React.FC<CarouselRowProps> = ({ items, className }) 
               )}
             </div>
 
-            {/* Botón de opciones */}
+            {/* boton de opciones */}
             <Button
               variant="light"
               size="sm"
@@ -144,7 +144,7 @@ const BootstrapCarouselRow: React.FC<CarouselRowProps> = ({ items, className }) 
         ))}
       </div>
 
-      {/* Botón derecha */}
+      {/* boton derecha */}
       <Button
         variant="dark"
         className="position-absolute top-50 end-0 translate-middle-y z-3"
