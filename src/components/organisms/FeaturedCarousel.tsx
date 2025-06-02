@@ -23,55 +23,61 @@ const FeaturedCarousel: React.FC = () => {
 
   const sampleItems = [
     {
-      image: 'https://picsum.photos/id/1011/400/200',
-      title: 'El misterio 1',
+      image: '/imagenes/deepfear.jpg',
+      title: 'Miedo Profundo',
     },
     {
-      image: 'https://picsum.photos/id/1012/400/200',
-      title: 'El misterio 2',
+      image: '/imagenes/fnaf.jpg',
+      title: 'Five Nights at Freddy\'s',
     },
     {
-      image: 'https://picsum.photos/id/1013/400/200',
-      title: 'El misterio 3',
+      image: '/imagenes/gumball.jpg',
+      title: 'The Amazing World of Gumball',
     },
     {
-      image: 'https://picsum.photos/id/1014/400/200',
-      title: 'El misterio 4',
+      image: '/imagenes/insideous.jpg',
+      title: 'La noche del demonio 3',
     },
     {
-      image: 'https://picsum.photos/id/1015/400/200',
-      title: 'El misterio 5',
+      image: '/imagenes/it.jpg',
+      title: 'It',
     },
     {
-      image: 'https://picsum.photos/id/1016/400/200',
-      title: 'El misterio 6',
+      image: '/imagenes/office.jpg',
+      title: 'The Office',
     },
     {
-      image: 'https://picsum.photos/id/1017/400/200',
-      title: 'El misterio 7',
+      image: '/imagenes/openpli.jpg',
+      title: 'Oppenheimer',
     },
     {
-      image: 'https://picsum.photos/id/1018/400/200',
-      title: 'El misterio 8',
+      image: '/imagenes/regShow.jpg',
+      title: 'Regular Show',
     },
     {
-      image: 'https://picsum.photos/id/1019/400/200',
-      title: 'El misterio 9',
+      image: '/imagenes/venom.jpg',
+      title: 'Venom El ultimo Baile',
     },
   ];
 
   const continueWatchingItems = [
     {
-      image: 'https://picsum.photos/id/1020/400/200',
-      title: 'Continuar viendo 1',
+      image: '/imagenes/RnM.jpg',
+      title: 'Rick and Morty',
+      age: '18+',
+      categoria: 'Comedy/Sci-Fi',
     },
     {
-      image: 'https://picsum.photos/id/1021/400/200',
-      title: 'Continuar viendo 2',
+      image: '/imagenes/Dandadan.jpg',
+      title: 'Dandadan',
+      age: '13+',
+      categoria: 'Anime/Action',
     },
     {
-      image: 'https://picsum.photos/id/1022/400/200',
-      title: 'Continuar viendo 3',
+      image: '/imagenes/Barbie.jpg',
+      title: 'Barbie',
+      age: '10+',
+      categoria: 'Comedy/Fantasy',
     }, 
   ];
 
@@ -136,18 +142,19 @@ const FeaturedCarousel: React.FC = () => {
     { image: '/imagenes/BNA.jpg', title: 'BNA' },
     { image: '/imagenes/Toradora.jpg', title: 'Toradora' },
   ];
+  
 
   const comediaItems = [
-    { image: 'https://picsum.photos/id/1050/400/200', title: 'Comedia 1' },
-    { image: 'https://picsum.photos/id/1051/400/200', title: 'Comedia 2' },
-    { image: 'https://picsum.photos/id/1052/400/200', title: 'Comedia 3' },
-    { image: 'https://picsum.photos/id/1053/400/200', title: 'Comedia 4' },
-    { image: 'https://picsum.photos/id/1054/400/200', title: 'Comedia 5' },
-    { image: 'https://picsum.photos/id/1055/400/200', title: 'Comedia 6' },
-    { image: 'https://picsum.photos/id/1056/400/200', title: 'Comedia 7' },
-    { image: 'https://picsum.photos/id/1057/400/200', title: 'Comedia 8' },
-    { image: 'https://picsum.photos/id/1058/400/200', title: 'Comedia 9' },
-    { image: 'https://picsum.photos/id/1059/400/200', title: 'Comedia 10' },
+    { image: '/imagenes/GemStones.jpg', title: 'The Righteous Gemstones' },
+    { image: '/imagenes/VEEP.jpg', title: 'VEEP' },
+    { image: '/imagenes/RnM.jpg', title: 'Rick and Morty' },
+    { image: '/imagenes/CurbYE.jpg', title: 'Curb Your Enthusiasm' },
+    { image: '/imagenes/Barbie.jpg', title: 'Barbie' },
+    { image: '/imagenes/eastbound.jpg', title: 'Eastbound & Down' },
+    { image: '/imagenes/flightcon.jpg', title: 'Flight of the Conchords' },
+    { image: '/imagenes/hacks3.jpg', title: 'Hacks' },
+    { image: '/imagenes/boreddeath.jpg', title: 'Bored to Death' },
+    { image: '/imagenes/EEAAO.jpg', title: 'Everything Everywhere all at Once' },
   ];
 
   return (
@@ -158,7 +165,7 @@ const FeaturedCarousel: React.FC = () => {
       <h2 style={{ ...titleStyle, marginTop: '30px' }}>Continúa viendo</h2>
       <CarouselRow items={continueWatchingItems} />
 
-      <h2 style={{ ...titleStyle, marginTop: '30px' }}>Top 10</h2>
+      <h2 style={{ ...titleStyle, marginTop: '30px' }}>Top 10 Hoy</h2>
       <CarouselRow items={top10Items} titleStyle={top10TitleStyle}/>
 
       <h2 style={{ ...titleStyle, marginTop: '30px' }}>Solo para ti</h2>
