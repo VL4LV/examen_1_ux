@@ -7,6 +7,8 @@ interface CarouselRowProps {
   items: {
     image: string;
     title: string;
+    age?: string;
+    year?: string;
     isNew?: boolean;
     progress?: number;
     description?: string;
@@ -33,7 +35,7 @@ const BootstrapCarouselRow: React.FC<CarouselRowProps> = ({ items, className }) 
       className={`position-relative py-3 text-white ${className || ''}`}
       style={{ backgroundColor: '#000000' }}
     >
-      {/* boton izquierda */}
+      {/* Botón izquierda */}
       <Button
         variant="dark"
         className="position-absolute top-50 start-0 translate-middle-y z-3"
@@ -52,99 +54,96 @@ const BootstrapCarouselRow: React.FC<CarouselRowProps> = ({ items, className }) 
         {items.map((item, index) => (
           <div
             key={index}
-            className={`card bg-dark text-white position-relative ${className || ''}`}
-            style={{ minWidth: '200px', flex: '0 0 auto', borderRadius: '8px', overflow: 'hidden' }}
+            className="d-flex flex-column"
+            style={{ minWidth: '200px', flex: '0 0 auto' }}
           >
-            {/* Etiqueta "Nuevo" */}
-            {item.isNew && (
-              <div
-                className="position-absolute top-0 start-0 bg-white text-dark px-2 py-1"
-                style={{
-                  fontSize: '0.85rem',
-                  fontWeight: 'bold',
-                  borderBottomRightRadius: '8px',
-                  border: '1px solid rgba(0,0,0,0.1)',
-                  zIndex: 2,
-                }}
-              >
-                Nuevo
-              </div>
-            )}
-
-            {/* Imagen */}
-            <img
-              src={item.image}
-              className="card-img"
-              alt={item.title}
-              style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
-            />
-
-            {/* Overlay con boton, titulo y barra de progreso */}
             <div
-              className="card-img-overlay d-flex flex-column justify-content-end p-2"
-              style={{
-                background: 'linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0))',
-                color: 'white',
-              }}
+              className="position-relative"
+              style={{ borderRadius: '8px', overflow: 'hidden' }}
             >
-              <h6 className="card-title mb-1 text-white" style={{ fontSize: '1rem' }}>
-                {item.title}
-              </h6>
+              {/* Etiqueta "Nuevo" */}
+              {item.isNew && (
+                <div
+                  className="position-absolute top-0 start-0 bg-white text-dark px-2 py-1"
+                  style={{
+                    fontSize: '0.85rem',
+                    fontWeight: 'bold',
+                    borderBottomRightRadius: '8px',
+                    border: '1px solid rgba(0,0,0,0.1)',
+                    zIndex: 2,
+                  }}
+                >
+                  Nuevo
+                </div>
+              )}
 
+              {/* Imagen */}
+              <img
+                src={item.image}
+                className="w-100"
+                alt={item.title}
+                style={{ borderRadius: '8px' }}
+              />
+
+              {/* Overlay opcional con play y progress */}
               {typeof item.progress === 'number' && (
-                <div className="d-flex flex-column align-items-start gap-1 mt-1">
-                  {/* boton ▶ */}
-                  <BsPlayFill
-                    style={{
-                      color: 'white',
-                      fontSize: '1.5rem',
-                      cursor: 'pointer',
-                    }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#cccccc')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = 'white')}
-                    onClick={() => setActiveIndex(activeIndex === index ? null : index)}
-                  />
-
-                  {/* Barra de progreso */}
-                  <div
-                    className="w-100 rounded"
-                    style={{ height: '6px', backgroundColor: 'rgba(255,255,255,0.3)' }}
-                  >
-                    <div
-                      style={{
-                        width: `${item.progress}%`,
-                        height: '100%',
-                        backgroundColor: 'white',
-                        borderRadius: '4px',
-                        transition: 'width 0.3s',
-                      }}
+                <div
+                  className="position-absolute bottom-0 start-0 end-0 p-2 d-flex flex-column"
+                  style={{
+                    background: 'linear-gradient(to top, rgba(0,0,0,0.6), transparent)',
+                  }}
+                >
+                  <div className="d-flex align-items-center gap-2">
+                    <BsPlayFill
+                      style={{ color: 'white', fontSize: '1.5rem', cursor: 'pointer' }}
+                      onClick={() => setActiveIndex(activeIndex === index ? null : index)}
                     />
+                    <div className="flex-grow-1 bg-secondary rounded" style={{ height: '6px' }}>
+                      <div
+                        className="bg-white rounded"
+                        style={{
+                          height: '100%',
+                          width: `${item.progress}%`,
+                          transition: 'width 0.3s',
+                        }}
+                      />
+                    </div>
                   </div>
-
-                  {/* Descripción visible solo si es el activo */}
                   {activeIndex === index && item.description && (
-                    <div className="mt-2 p-2 bg-dark rounded" style={{ fontSize: '0.85rem', opacity: 0.9 }}>
+                    <div className="mt-2 p-2 bg-dark rounded" style={{ fontSize: '0.85rem' }}>
                       {item.description}
                     </div>
                   )}
                 </div>
               )}
+
+              {/* Botón de opciones */}
+              <Button
+                variant="light"
+                size="sm"
+                className="position-absolute top-0 end-0 m-1 p-1"
+                style={{ borderRadius: '50%', opacity: 0.8, zIndex: 2 }}
+              >
+                <BsThreeDotsVertical />
+              </Button>
             </div>
 
-            {/* boton de opciones */}
-            <Button
-              variant="light"
-              size="sm"
-              className="position-absolute top-0 end-0 m-1 p-1"
-              style={{ borderRadius: '50%', opacity: 0.8, zIndex: 2 }}
-            >
-              <BsThreeDotsVertical />
-            </Button>
+            {/* Título + edad + año DEBAJO de la imagen */}
+            <div className="mt-2 px-1 text-white text-start">
+              <div className="fw-bold" style={{ fontSize: '0.95rem' }}>
+                {item.title}
+              </div>
+              {(item.age || item.year) && (
+                <div className="text-white-50" style={{ fontSize: '0.85rem' }}>
+                  {item.age} {item.year && `| ${item.year}`}
+                </div>
+              )}
+            </div>
           </div>
         ))}
       </div>
 
-      {/* boton derecha */}
+      {/* Botón derecha */}
       <Button
         variant="dark"
         className="position-absolute top-50 end-0 translate-middle-y z-3"
