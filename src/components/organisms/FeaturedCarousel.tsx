@@ -20,7 +20,7 @@ const FeaturedCarousel: React.FC = () => {
 
   const sampleItems = [
     {
-      image: '/imagenes/insideous.jpg',
+      image: '/imagenes/insi3.jpg',
       title: 'La noche del demonio 3',
     },
     {
@@ -37,7 +37,7 @@ const FeaturedCarousel: React.FC = () => {
       title: 'Five Nights at Freddy\'s',
     },
     {
-      image: '/imagenes/openpli.jpg',
+      image: '/imagenes/open.jpg',
       title: 'Oppenheimer',
     },
     {
@@ -53,7 +53,7 @@ const FeaturedCarousel: React.FC = () => {
       title: 'It',
     },
     {
-      image: '/imagenes/deepfear.jpg',
+      image: '/imagenes/miedoProfundo.jpg',
       title: 'Miedo Profundo',
       isNew: true,
     },
@@ -164,7 +164,9 @@ const FeaturedCarousel: React.FC = () => {
     { image: '/imagenes/flightcon.jpg', title: 'Flight of the Conchords' },
     { image: '/imagenes/hacks3.jpg', title: 'Hacks' },
     { image: '/imagenes/boreddeath.jpg', title: 'Bored to Death', isNew: true },
-    { image: '/imagenes/EEAAO.jpg', title: 'Everything Everywhere all at Once' },
+    { image: '/imagenes/EEAAO.jpg', title: 'Everything all at Once' },
+    { image: '/imagenes/SB.jpg', title: 'SUPERBAD' },
+    { image: '/imagenes/Gintama.jpg', title: 'Gintama' },
   ];
 
   return (
