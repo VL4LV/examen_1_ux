@@ -177,7 +177,7 @@ const FeaturedCarousel: React.FC = () => {
       <h2 style={{ ...titleStyle, marginTop: '30px' }}>Continúa viendo</h2>
       <CarouselRow items={continueWatchingItems} />
 
-      <h2 style={{ ...titleStyle, marginTop: '30px' }}>Top 10 Películas Hoy</h2>
+      <h2 style={{ ...titleStyle, marginTop: '30px' }}>Top 10 Hoy</h2>
       <CarouselRow items={top10Items} />
 
       <h2 style={{ ...titleStyle, marginTop: '30px' }}>Solo para ti</h2>

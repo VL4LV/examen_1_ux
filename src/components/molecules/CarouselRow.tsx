@@ -35,7 +35,7 @@ const BootstrapCarouselRow: React.FC<CarouselRowProps> = ({ items, className }) 
       className={`position-relative py-3 text-white ${className || ''}`}
       style={{ backgroundColor: '#000000' }}
     >
-      {/* Botón izquierda */}
+      {/* boton izquierda */}
       <Button
         variant="dark"
         className="position-absolute top-50 start-0 translate-middle-y z-3"
@@ -122,7 +122,7 @@ const BootstrapCarouselRow: React.FC<CarouselRowProps> = ({ items, className }) 
                 </div>
               )}
 
-              {/* Botón de opciones */}
+              {/* boton de opciones */}
               <Button
                 variant="light"
                 size="sm"
@@ -133,7 +133,7 @@ const BootstrapCarouselRow: React.FC<CarouselRowProps> = ({ items, className }) 
               </Button>
             </div>
 
-            {/* Título + edad + año DEBAJO de la imagen */}
+            {/* titulo + edad + año DEBAJO de la imagen */}
             <div className="mt-2 px-1 text-white text-start">
               <div className="fw-bold" style={{ fontSize: '0.95rem' }}>
                 {item.title}
@@ -148,7 +148,7 @@ const BootstrapCarouselRow: React.FC<CarouselRowProps> = ({ items, className }) 
         ))}
       </div>
 
-      {/* Botón derecha */}
+      {/* boton derecha */}
       <Button
         variant="dark"
         className="position-absolute top-50 end-0 translate-middle-y z-3"
