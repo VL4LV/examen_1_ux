@@ -20,33 +20,12 @@ const FeaturedCarousel: React.FC = () => {
 
   const sampleItems = [
     {
-      image: '/imagenes/deepfear.jpg',
-      title: 'Miedo Profundo',
-      isNew: true,
-    },
-    {
-      image: '/imagenes/fnaf.jpg',
-      title: 'Five Nights at Freddy\'s',
-    },
-    {
-      image: '/imagenes/gumball.jpg',
-      title: 'The Amazing World of Gumball',
-    },
-    {
       image: '/imagenes/insideous.jpg',
       title: 'La noche del demonio 3',
     },
     {
-      image: '/imagenes/it.jpg',
-      title: 'It',
-    },
-    {
-      image: '/imagenes/office.jpg',
-      title: 'The Office',
-    },
-    {
-      image: '/imagenes/openpli.jpg',
-      title: 'Oppenheimer',
+      image: '/imagenes/gumball.jpg',
+      title: 'The Amazing World of Gumball',
     },
     {
       image: '/imagenes/regShow.jpg',
@@ -54,8 +33,29 @@ const FeaturedCarousel: React.FC = () => {
       isNew: true,
     },
     {
+      image: '/imagenes/fnaf.jpg',
+      title: 'Five Nights at Freddy\'s',
+    },
+    {
+      image: '/imagenes/openpli.jpg',
+      title: 'Oppenheimer',
+    },
+    {
+      image: '/imagenes/office.jpg',
+      title: 'The Office',
+    },
+    {
       image: '/imagenes/venom.jpg',
       title: 'Venom El ultimo Baile',
+    },
+    {
+      image: '/imagenes/it.jpg',
+      title: 'It',
+    },
+    {
+      image: '/imagenes/deepfear.jpg',
+      title: 'Miedo Profundo',
+      isNew: true,
     },
   ];
 
@@ -70,6 +70,15 @@ const FeaturedCarousel: React.FC = () => {
       description: 'Una serie animada sobre aventuras cómicas y científicas de Rick y su nieto Morty.',
     },
     {
+      image: '/imagenes/Barbie.jpg',
+      title: 'Barbie',
+      age: '10+',
+      year: '2023',
+      categoria: 'Comedy/Fantasy',
+      progress: 55,
+      description: 'Película de fantasía y comedia para toda la familia con la icónica muñeca Barbie.',
+    },
+    {
       image: '/imagenes/Dandadan.jpg',
       title: 'Dandadan',
       age: '13+',
@@ -78,15 +87,6 @@ const FeaturedCarousel: React.FC = () => {
       isNew: true,
       progress: 75,
       description: 'Un anime lleno de acción y elementos sobrenaturales, con personajes entrañables y peleas épicas.',
-    },
-    {
-      image: '/imagenes/Barbie.jpg',
-      title: 'Barbie',
-      age: '10+',
-      year: '2023',
-      categoria: 'Comedy/Fantasy',
-      progress: 55,
-      description: 'Película de fantasía y comedia para toda la familia con la icónica muñeca Barbie.',
     },
   ];
 
