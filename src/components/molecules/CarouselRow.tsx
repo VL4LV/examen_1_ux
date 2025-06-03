@@ -78,12 +78,17 @@ const BootstrapCarouselRow: React.FC<CarouselRowProps> = ({ items, className }) 
               )}
 
               {/* Imagen */}
-              <img
-                src={item.image}
-                className="w-100"
-                alt={item.title}
-                style={{ borderRadius: '8px' }}
-              />
+              <div style={{ width: '200px', height: '300px', overflow: 'hidden', borderRadius: '8px' }}>
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover', // clave para que no se deforme
+                  }}
+                />
+              </div>
 
               {/* Overlay opcional con play y progress */}
               {typeof item.progress === 'number' && (
